@@ -3,7 +3,7 @@ import { getEvents } from '@/lib/content';
 
 export default async function EventPage({ params }: { params: { slug: string } }) {
   const events = await getEvents();
-  const event = events.find((entry) => entry.slug === params.slug);
+  const event = events.find((entry: any) => entry.slug === params.slug);
   if (!event) notFound();
 
   return (
